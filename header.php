@@ -20,6 +20,8 @@ if ($jk == 'L') {
 	<title>Aplikasi Pembayaran SPP</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/style.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/buttons.bootstrap.min.css">
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top">
@@ -44,8 +46,8 @@ if ($jk == 'L') {
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Laporan <b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="laporan.php">Laporan Pembayaran</a></li>
-						<li><a href="laporan.php">Laporan Tunggakan</a></li>
+						<li><a href="laporan.php?sts=lns">Laporan Pembayaran</a></li>
+						<li><a href="laporan.php?sts=tgk">Laporan Tunggakan</a></li>
 					</ul>
 				</li>
 				<li>

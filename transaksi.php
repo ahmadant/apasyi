@@ -11,7 +11,7 @@
 				<i class="glyphicon glyphicon-search"></i>
 		</span>
 	</div>
-	<a href="kunci_transaksi.php">Kunci Transaksi</a>
+	<a href="kunci_transaksi.php" class="btn btn-warning"><i class="glyphicon glyphicon-lock"></i> Kunci Transaksi</a>
 </form>
 
 <!-- Hasil Pencarian santri -->
