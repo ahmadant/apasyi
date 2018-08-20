@@ -11,7 +11,6 @@ if ($jk == 'L') {
 } else {
 	$gen = "Putri";
 }
-
 ?>
 
 <!DOCTYPE html>
