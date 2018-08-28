@@ -4,7 +4,7 @@ for($i=6; $i<=12; $i+=6){
 }
 ?>
 
-<h3>Data santri</h3>
+<h3>Data santri <?=$gen?></h3>
 <a href="tambah_santri.php"class="btn btn-info"><i class="glyphicon glyphicon-plus-sign"></i> Tambah Data</a><p></p>
 <table class="table table-responsive table-bordered">
 	<tr>
@@ -29,8 +29,8 @@ for($i=6; $i<=12; $i+=6){
 			<td>$d[kamar]</td>
 			<td>$d[tahunajaran]</td>
 			<td>
-				<a href='edit_santri.php?id=$d[nis]' class='btn btn-success'><i class='glyphicon glyphicon-pencil'></i> Edit</a>
-				<a href='hapus_santri.php?id=$d[nis]' class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i> Hapus</a>
+				<a href='edit_santri.php?id=$d[nis]' class='btn btn-success btn-sm'><i class='glyphicon glyphicon-pencil'></i> Edit</a>
+				<a href='hapus_santri.php?id=$d[nis]' class='btn btn-danger btn-sm'><i class='glyphicon glyphicon-trash'></i> Hapus</a>
 			</td>
 		</tr>";
 		$no++;

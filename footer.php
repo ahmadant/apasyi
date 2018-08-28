@@ -6,6 +6,7 @@
 	<i>Dsn. Sarimulyo 1/10 Kalibeber kec. Mojotengah Kab. Wonosobo</i>
 </footer>
 <script src="bootstrap/js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="bootstrap/js/jquery.autocomplete.min.js"></script>
 <script src="bootstrap/js/jquery.dataTables.min.js"></script>
 <script src="bootstrap/js/dataTables.bootstrap.min.js"></script>
@@ -14,7 +15,6 @@
 <script src="bootstrap/js/dataTables.buttons.min.js"></script>
 <script src="bootstrap/js/buttons.bootstrap.min.js"></script>
 <script src="bootstrap/js/buttons.html5.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="bootstrap/js/fungsi.js"></script>
 
 <script>

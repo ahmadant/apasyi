@@ -20,8 +20,8 @@
 			<td>$d[kamar]</td>
 			<td>$d[namaustadz]</td>
 			<td>
-				<a href='edit_kamar.php?kls=$d[kamar]' class='btn btn-success'><i class='glyphicon glyphicon-pencil'></i> Edit</a>  
-				<a href='hapus_kamar.php?kls=$d[kamar]'class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i> Hapus</a>
+				<a href='edit_kamar.php?kls=$d[kamar]' class='btn btn-success btn-sm'><i class='glyphicon glyphicon-pencil'></i> Edit</a>  
+				<a href='hapus_kamar.php?kls=$d[kamar]'class='btn btn-danger btn-sm'><i class='glyphicon glyphicon-trash'></i> Hapus</a>
 			</td>
 		</tr>";
 		$no++;

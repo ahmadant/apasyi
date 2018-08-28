@@ -10,7 +10,7 @@ $thnajar2 = date('Y');
 //membuat tagihan (12 bulan dimulai dari Juli 2017 dan menyimpan tagihan di tabel spp
 ?>
 
-<h3>Edit Data santri</h3>
+<h3>Edit Data santri <?=$gen?></h3>
 <form method="post" action="">
 	<table class="table table-responsive table-bordered">
 		<tr>

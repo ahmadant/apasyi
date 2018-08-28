@@ -23,7 +23,7 @@ $thnajar2 = date('Y');
 	$jtp = date('Y-m-d',strtotime('+1 month',$timestamp));
 ?>
 
-<h3>Tambah Data santri</h3>
+<h3>Tambah Data santri <?=$gen?></h3>
 <form method="post" action="">
 	<table class="table table-responsive table-bordered">
 		<tr>
@@ -44,7 +44,7 @@ $thnajar2 = date('Y');
 					$sqlkamar = mysqli_query($konek, "select * from kamar,ustadz where kamar.idustadz=ustadz.idustadz and ustadz.jk = '$jk' order by kamar ASC");
 					while($k=mysqli_fetch_array($sqlkamar)){
 						?>
-						<option value="<?php echo $k['kamar']; ?>"><?php echo $k['kamar']."-".$k['namaustadz']; ?></option>
+						<option value="<?php echo $k['kamar']; ?>"><?php echo $k['kamar']; ?></option>
 						<?php
 					}
 					?>
@@ -61,7 +61,7 @@ $thnajar2 = date('Y');
 		</tr>
 		<tr>
 			<td>Biaya Semester</td>
-			<td><input type="text" name="semester" class="form-control" value="680000" readonly="" /></td>
+			<td><input type="text" name="semester" class="form-control" value="500000" readonly="" /></td>
 		</tr>
 		<tr>
 			<td>Jatuh Tempo Pertama</td>
@@ -95,36 +95,30 @@ $thnajar2 = date('Y');
 		}else{
 			$simpan = mysqli_query($konek, "insert into santri(nis,namasantri,jk,kamar,tahunajaran)
 					values('$nis','$nama','$jk','$kamar','$tahun')");
-			var_dump($simpan);
 			if(!$simpan){
-				echo "Penyimpanan data gagal..";
+				echo '<div class="alert alert-warning alert-dismissible fade in" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Data gagal disimpan</strong></div>';
 			}else{
 				//ambil data id santri terakhir
 				$ds=mysqli_fetch_array(mysqli_query($konek, "SELECT nis FROM santri WHERE nis='$nis'"));
 				$idsantri = $ds['nis'];
-
-				//membuat tagihan (12 bulan dimulai dari Juli 2017 dan menyimpan tagihan di tabel spp
+				//membuat tagihan (12 bulan dimulai dari 1 bulan setelah daftar dan menyimpan tagihan di tabel syahriyah
 				for($i=0; $i<12; $i++){
-					//membuat tanggal jatuh tempo nya setiap tanggal 10
 					$jatuhtempo = date("Y-m-d", strtotime("+$i month", strtotime($awaltempo)));
 
 					$bulan = $bulanIndo[date('m', strtotime($jatuhtempo))]." ".date('Y',strtotime($jatuhtempo));
 
-					mysqli_query($konek, "INSERT INTO syahriyah(nis,jatuhtempo,bulan,jumlah)
+					$bsy = mysqli_query($konek, "INSERT INTO syahriyah(nis,jatuhtempo,bulan,jumlah)
 								values('$idsantri','$jatuhtempo','$bulan','$syah')");
 				}
-				var_dump($bulan);
 				//membuat tagihan semesteran setiap 6 bulan dan menyimpan tagihan di tabel semester
 				for($i=5; $i<12; $i+=6){
-					//membuat tanggal jatuh tempo nya setiap tanggal
 					$smt = date("Y-$i-1");
 
 					$blnsmt = $bulanIndo[date('m', strtotime($smt))]." ".date('Y',strtotime($smt));
 
-					mysqli_query($konek, "INSERT INTO semester(nis,jatuhtempo,bulan,jumlah)
+					$bsm = mysqli_query($konek, "INSERT INTO semester(nis,jatuhtempo,bulan,jumlah)
 								values('$idsantri','$smt','$blnsmt','$semes')");
 				}
-
 				header('location:tampil_santri.php');
 			}
 		}
