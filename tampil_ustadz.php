@@ -4,13 +4,13 @@ $sql=mysqli_query($konek, "SELECT * FROM ustadz WHERE jk='$jk' ORDER BY idustadz
 $no =1;	 
 ?>
 <div class="col-md-6">
-<h3>Data ustadz <?=$gen?></h3>
+<h3>Data Ustadz<?=$gen?></h3>
 
 <a href="tambah_ustadz.php" class="btn btn-info"><i class="glyphicon glyphicon-plus-sign"></i> Tambah Data</a><p></p>
 <table class="table table-striped table-bordered table-responsive">
 	<tr>
 		<th>No</th>
-		<th>Nama ustadz</th>
+		<th>Nama Ustadz</th>
 		<th>Bidang</th>
 		<th>Jenis Kelamin</th>
 		<th>Aksi</th>
